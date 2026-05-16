@@ -1,0 +1,91 @@
+name: Shoot Planning
+description: End-to-end planning workflow for a photography shoot, from initial concept through final delivery.
+category: photography
+tags:
+  - shoot
+  - planning
+  - client
+
+steps:
+  - title: Define creative brief
+    description: Establish shot list, mood board, style direction, and client expectations.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - planning
+
+  - title: Scout location
+    description: Visit and evaluate potential shooting locations. Note lighting conditions, accessibility, permits needed.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - planning
+      - location
+
+  - title: Arrange permits and access
+    description: Secure any required location permits, property access agreements, or public space reservations.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - logistics
+
+  - title: Book talent and crew
+    description: Confirm models, assistants, stylists, MUA. Send call sheets with time, location, and parking.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - logistics
+      - crew
+
+  - title: Prepare gear checklist
+    description: |
+      Bodies, lenses, lighting, modifiers, batteries, cards, backup gear.
+      Check firmware, format cards, charge batteries night before.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - gear
+
+  - title: Shoot day
+    description: Execute the shot list. Tether if applicable. Review selects on-site with client if present.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - shoot
+
+  - title: Ingest and backup
+    description: Import to Lightroom catalog, verify backup copies, rename per convention.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - post
+
+  - title: Culling and selects
+    description: First pass — flag picks, reject obvious misses. Deliver contact sheet or proofing gallery to client.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - post
+      - selects
+
+  - title: Develop and retouch
+    description: Process selected images. Color grade, exposure adjustments, skin retouching as needed.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - post
+      - develop
+
+  - title: Client review
+    description: Share proofing gallery for client approval. Collect feedback and revision requests.
+    column: To Do
+    assignee_role: client
+    labels:
+      - review
+
+  - title: Final delivery
+    description: Export finals at contracted resolution. Upload to delivery gallery with download links.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - delivery

@@ -1,0 +1,5 @@
+# BillNash module-specific dependencies
+# Framework provides: flask, elasticsearch, redis, requests, Pillow
+# Gallery module provides: image processing, EXIF handling
+
+# No additional dependencies — gallery + cms + framework cover everything

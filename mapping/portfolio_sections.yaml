@@ -1,0 +1,14 @@
+portfolio_sections:
+  mappings:
+    properties:
+      title:        { type: text, fields: { raw: { type: keyword } } }
+      description:  { type: text }
+      gallery_id:   { type: keyword }
+      cover_image:  { type: keyword }
+      order:        { type: integer }
+      published:    { type: boolean }
+      created_at:   { type: date }
+      updated_at:   { type: date }
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 0

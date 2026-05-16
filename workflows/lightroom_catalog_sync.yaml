@@ -1,0 +1,60 @@
+name: Lightroom Catalog Sync
+description: Workflow for syncing a Lightroom catalog collection to the web gallery system.
+category: photography
+tags:
+  - lightroom
+  - catalog
+  - sync
+  - technical
+
+steps:
+  - title: Prepare collection in Lightroom
+    description: Create or update the publish collection. Verify all images have keywords, titles, and captions.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - lightroom
+
+  - title: Review develop settings
+    description: Ensure all images have final develop settings applied. Check for consistency across the set.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - lightroom
+      - develop
+
+  - title: Publish to web gallery
+    description: Use the RNA Lightroom publish plugin to push images. Verify sync completes without errors.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - sync
+
+  - title: Verify metadata sync
+    description: Check the gallery admin metadata inspector to confirm EXIF, captions, and develop settings arrived correctly.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - sync
+      - verification
+
+  - title: Configure gallery display
+    description: Set layout mode, sort order, cover image, captions, and lightbox options.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - configuration
+
+  - title: Set photo flags
+    description: Mark visibility, hero eligibility, and feature eligibility per image. Set crop points.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - curation
+
+  - title: Publish gallery
+    description: Toggle gallery to published. Verify public display and test all interaction modes.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - publish

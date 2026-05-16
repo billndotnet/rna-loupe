@@ -1,0 +1,41 @@
+# Loupe — brand-agnostic photographer-site application package.
+# Used by rna/scripts/deploy.sh. Per-instance branding (titles, domain,
+# colors, logo) lives in the instance config + CMS/branding system,
+# NOT here — this manifest is identical for every photographer site.
+
+app_name: loupe
+display_name: Loupe Photography Platform   # overridden per instance via site.html_title
+default_port: 8400
+default_target: /opt/loupe
+
+config_path: etc/loupe/config.yml
+
+modules:
+  # Core application (this package's app module)
+  rna-loupe: loupe
+
+  # Media management (primary feature)
+  rna-gallery: gallery
+  rna-catalog: catalog
+
+  # Content (landing, blog, pages, branding)
+  rna-cms: cms
+
+  # Client / people management
+  rna-crm: crm
+
+  # Industry directory integration (ModelDB in integration mode —
+  # points at a configured hub; see etc/<instance>/config.yml: modeldb)
+  rna-modeldb: modeldb
+
+  # Monetization
+  rna-amazonads: amazonads
+
+  # Infrastructure
+  rna-waf: waf
+  rna-oauth: oauth
+
+  # Background processing & ops
+  rna-tasks: tasks
+  rna-kanban: kanban
+  rna-support: support

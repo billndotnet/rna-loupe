@@ -1,0 +1,28 @@
+# Module bootstrap dependency declaration
+
+module: loupe
+display_name: Bill Nash Photography
+category: application
+
+depends_on:
+  - elasticsearch
+  - gallery       # Primary dependency — image management and Lightroom sync
+
+provides:
+  - photography_portfolio  # Public portfolio with gallery integration
+  - client_galleries       # Proofing galleries via rna-gallery
+  - contact_booking        # Contact form and booking workflow
+
+bootstrap_script: null   # Uses deploy.yml via deploy-all.sh
+salt_state: null
+
+port: 8400
+index_prefix: bn_
+domains:
+  app: 
+
+modules:
+  - gallery    # Photo management, Lightroom plugin, client proofing
+  - waf        # Security
+  - cms        # Blog and pages
+  - support    # Client support

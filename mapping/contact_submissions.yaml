@@ -1,0 +1,17 @@
+contact_submissions:
+  mappings:
+    properties:
+      name:         { type: text, fields: { raw: { type: keyword } } }
+      email:        { type: keyword }
+      phone:        { type: keyword }
+      event_type:   { type: keyword }
+      event_date:   { type: date }
+      message:      { type: text }
+      status:       { type: keyword }
+      ip:           { type: ip }
+      notes:        { type: text }
+      created_at:   { type: date }
+      updated_at:   { type: date }
+  settings:
+    number_of_shards: 1
+    number_of_replicas: 0

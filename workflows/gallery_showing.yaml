@@ -1,0 +1,79 @@
+name: Gallery Showing
+description: Prepare and execute a gallery exhibition or portfolio review showing.
+category: photography
+tags:
+  - gallery
+  - exhibition
+  - showing
+
+steps:
+  - title: Curate collection
+    description: Select images for the showing. Consider narrative flow, tonal consistency, and audience.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - curation
+
+  - title: Sequence and layout
+    description: Determine presentation order. Map wall layout or portfolio page flow. Consider pacing and visual rhythm.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - curation
+      - layout
+
+  - title: Print production
+    description: Order prints, verify color proofs, select paper/media. Confirm sizing for frames or display method.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - production
+
+  - title: Framing and mounting
+    description: Frame prints, prepare mounts, attach hanging hardware. Inspect for dust and defects.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - production
+
+  - title: Prepare artist statement
+    description: Write or update artist statement, image descriptions, and pricing if applicable.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - content
+
+  - title: Configure online gallery
+    description: Set up or update the public gallery with exhibition images, captions, and pricing.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - digital
+
+  - title: Promote event
+    description: Social media announcements, email invitations, press outreach. Confirm date, time, venue.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - marketing
+
+  - title: Venue setup
+    description: Hang work, set lighting, arrange furniture. Test AV if doing a presentation.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - logistics
+
+  - title: Opening night
+    description: Host the event. Collect contact info from interested buyers. Document the showing.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - event
+
+  - title: Follow up
+    description: Send thank-you notes, follow up on purchase inquiries, update inventory.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - follow-up

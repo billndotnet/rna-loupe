@@ -1,0 +1,65 @@
+name: Client Proofing
+description: Deliver a proofing gallery to a client and manage the selection and delivery cycle.
+category: photography
+tags:
+  - client
+  - proofing
+  - delivery
+
+steps:
+  - title: Process proofing set
+    description: Develop proofing-quality edits of all selects. Watermark if required by contract.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - post
+
+  - title: Create proofing gallery
+    description: Upload to proofing gallery with favorites enabled. Set access controls and optional password.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - delivery
+
+  - title: Send gallery link
+    description: Email client with gallery URL, instructions for selecting favorites, and deadline.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - communication
+
+  - title: Client selects favorites
+    description: Client reviews gallery and marks their selections. Monitor for questions.
+    column: To Do
+    assignee_role: client
+    labels:
+      - review
+
+  - title: Review selections
+    description: Pull client favorites from gallery. Confirm count matches contract package.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - review
+
+  - title: Final retouching
+    description: Apply full retouching to selected images per contract specifications.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - post
+      - develop
+
+  - title: Deliver finals
+    description: Export at contracted resolution. Upload to download gallery with expiring links.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - delivery
+
+  - title: Archive project
+    description: Back up finals and working files. Update catalog keywords. Mark project complete.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - archive

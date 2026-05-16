@@ -1,0 +1,38 @@
+# Loupe instance configuration TEMPLATE — copy to etc/<instance>/config.yml
+# and fill in. Branding/identity is per-instance HERE (and in the CMS +
+# framework branding system); the rna-loupe package itself ships no brand.
+
+# -- Instance identity --
+domain: example.com
+instance_name: loupe          # ES index prefix + app/instance name
+BASE_URL: https://example.com
+
+# -- Elasticsearch (shared cluster; per-instance scoped user) --
+ES_URL: https://db.codexastra.io:9200
+ES_USERNAME: CHANGE_ME        # per-instance role, bn_*-style prefix scope
+ES_PASSWORD: CHANGE_ME
+
+# -- Branding (overrides display_name; logo/colors via CMS + /admin branding) --
+site:
+  html_title: My Photography
+  nav_title: My Photography
+  meta_description: Photography portfolio and client galleries.
+
+# -- ModelDB integration --
+# Photographer sites run ModelDB in INTEGRATION mode pointing at the
+# canonical hub. Leave mode=hub only for the dedicated hub instance.
+modeldb:
+  mode: integration
+  hub_url: https://modeldb.example.com
+  hub_key: CHANGE_ME
+
+# -- Email --
+email:
+  dkim_domain: example.com
+  from_address: noreply@example.com
+  reply_to: hello@example.com
+  smtp_username: null
+  smtp_password: null
+
+# Secrets (Vault tokens, SMTP/DKIM keys) are injected per-instance and
+# MUST NOT be committed. Keep real etc/<instance>/ out of git.
