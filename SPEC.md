@@ -28,20 +28,21 @@ site); it is not the product.
 - `config.example.yml` — per-instance identity/branding/ModelDB-hub
   template. No brand or secret in the package.
 
-## Migration plan (billnash → loupe instance)
+## Migration status (billnash → loupe instance)
 
-Status: package scaffolded & committed. Live deployment still runs the
-old `module/billnash` app module. Deliberate cutover (same staged
-approach used for the ModelDB extraction — do not destabilize the
-running site):
+**DONE on the billnash staging instance (2026-05-16).** `module/billnash`
+retired; the instance runs `module/loupe`. Verified: public site
+(`/`, `/contact`, `/landing/*`, galleries) all 200 loupe-served;
+`/api/loupe/*` authoritative; `/api/billnash/*` gone (404); shared
+`portfolio_sections`/`contact_submissions` indices reused (no data
+migration, no orphans); adjacent modules intact. billnash identity is
+now purely `etc/billnash/config.yml` + CMS/branding.
 
-1. Stand up a `/opt/loupe-*` (or re-point billnash) assembled from
-   rna-loupe via `install.sh`.
-2. Move billnash-specific identity entirely into
-   `etc/billnash/config.yml` + CMS/branding (already mostly there).
-3. Swap `module/billnash` → `module/loupe`; retire `rna-billnash`.
-4. Parity-smoke (portfolio, contact, workflows, galleries), then
-   cut over the symlink.
+Remaining: (a) apply the same swap to any future/other photographer
+instances via `install.sh` (no `module/<brand>` app module — always
+`module/loupe`); (b) the legacy `rna-billnash` repo is superseded —
+archive/retire it; (c) production rollout when ready (this was the
+staging instance).
 
 ## On deck
 
