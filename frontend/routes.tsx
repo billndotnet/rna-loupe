@@ -1,13 +1,15 @@
 import React from 'react'
 import type { RouteObject } from 'react-router-dom'
+import { lazyWithRetry } from '@/frontend/src/utils/lazyWithRetry'
 
 function lazyPage(importFn: () => Promise<{ default: React.ComponentType }>) {
-  return React.createElement(() => {
-    const Component = React.lazy(importFn)
-    return React.createElement(React.Suspense,
+  // lazyWithRetry (not raw React.lazy) so stale-deploy chunk failures
+  // recover transparently; created once, not per render.
+  const Component = lazyWithRetry(importFn)
+  return React.createElement(() =>
+    React.createElement(React.Suspense,
       { fallback: React.createElement('div', null, '') },
-      React.createElement(Component))
-  })
+      React.createElement(Component)))
 }
 
 export function getRoutes(): RouteObject[] {
