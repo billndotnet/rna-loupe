@@ -38,6 +38,20 @@ steps:
       - sync
       - verification
 
+  - title: Stack near-duplicate cohorts
+    description: >-
+      Finishing the publish queues a per-catalog cohort job (the plugin
+      triggers it; it defers until this catalog's previews are ready,
+      then groups >=~92%-similar frames batched per shooter). Once it
+      reports done, close Lightroom and run scripts/lr_stack_cohorts.py
+      against the local .lrcat (dry-run first, then --commit) to stack
+      each cohort so burst sequences are collapsed when culling.
+    column: To Do
+    assignee_role: photographer
+    labels:
+      - lightroom
+      - curation
+
   - title: Configure gallery display
     description: Set layout mode, sort order, cover image, captions, and lightbox options.
     column: To Do
