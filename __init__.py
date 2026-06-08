@@ -11,7 +11,8 @@ from pathlib import Path
 
 import yaml
 
-from backend.framework.modules import register_blueprint, register_module_metadata
+from backend.framework.modules import register_blueprint, register_module_metadata, register_debug_endpoint
+from backend.framework.relationships import register_module_schema
 
 logger = logging.getLogger(__name__)
 
@@ -48,6 +49,24 @@ def init_app(app, task_registry=None) -> None:
             {"label": "Photography", "path": "/admin/loupe", "icon": "CameraAlt"},
         ],
     )
+
+    try:
+        register_module_schema("loupe", {
+            "version": "1.0",
+            "description": "Photographer-site application package — portfolio, client galleries, booking, workflow templates",
+            "available_data": {
+                "workflow_templates": {
+                    "module": "loupe",
+                    "scope": "kanban-injected",
+                    "examples": "Shoot Planning, Lightroom Catalog Sync, retouching pipeline",
+                },
+            },
+            "access_methods": [
+                "GET /api/loupe/...",
+            ],
+        })
+    except Exception:
+        pass
 
     # Register photography-specific workflow templates into kanban
     try:
